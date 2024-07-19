@@ -17,7 +17,8 @@ export default function AddBlog() {
       },
       body: JSON.stringify(blogFormData),
     })
-
+    console.log("bisa");
+    
     const result = await response.json();
     console.log(result);
   }
