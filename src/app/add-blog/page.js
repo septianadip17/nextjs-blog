@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 const initialFormData = {
   title: "",
@@ -8,23 +7,18 @@ const initialFormData = {
 };
 export default function AddBlog() {
   const [blogFormData, setBlogFormData] = useState(initialFormData);
-  const router = useRouter();
 
-  async function handleAddBlog() {
+  async function handleAddBlog(){
     const response = await fetch("/api/blog/add-new-blog", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(blogFormData),
-    });
-
+    })
+    console.log("bisa");
     const result = await response.json();
     console.log(result);
-    if (result?.success) {
-      setBlogFormData(initialFormData);
-      router.push("/blog-list");
-    }
   }
 
   return (
@@ -38,12 +32,10 @@ export default function AddBlog() {
             name="title"
             placeholder="enter blog title"
             value={blogFormData["title"]}
-            onChange={(e) =>
-              setBlogFormData({
-                ...blogFormData,
-                title: e.target.value,
-              })
-            }
+            onChange={(e)=> setBlogFormData({
+              ...blogFormData,
+              title: e.target.value
+            })}
           />
         </div>
         <div className="flex flex-col gap-3">
@@ -54,19 +46,14 @@ export default function AddBlog() {
             name="description"
             placeholder="enter blog description"
             value={blogFormData["description"]}
-            onChange={(e) =>
-              setBlogFormData({
-                ...blogFormData,
-                description: e.target.value,
-              })
-            }
+            onChange={(e)=> setBlogFormData({
+              ...blogFormData,
+              description: e.target.value
+            })}
           />
         </div>
         <div>
-          <button
-            onClick={handleAddBlog}
-            className="border border-red-500 p-4 bg-black text-white"
-          >
+          <button onClick={handleAddBlog} className="border border-red-500 p-4 bg-black text-white">
             Add Blog
           </button>
         </div>
