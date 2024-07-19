@@ -3,6 +3,7 @@ import Blog from "@/models/blog";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
+  console.log("sebelum try")
   try {
     await connectToDB();
     const extractData = await req.json();
