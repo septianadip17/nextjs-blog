@@ -41,6 +41,7 @@ export default function BlogListComponent({ getAllBlogs }) {
             >
               Delete Blog Item
             </button>
+            <button className="border border-red-500 p-4 bg-black text-white">View Blog Details</button>
           </div>
         ))
       ) : (
