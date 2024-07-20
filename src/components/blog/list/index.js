@@ -15,7 +15,7 @@ export default function BlogListComponent({ getAllBlogs }) {
     <div>
       {getAllBlogs && getAllBlogs.length > 0 ? (
         getAllBlogs.map((blogItem) => (
-          <div key={blogItem.id}>
+          <div key={blogItem._id}>
             <p>{blogItem.title}</p>
             <p>{blogItem.description}</p>
           </div>
