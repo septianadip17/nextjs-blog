@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-
-export default function BlogDetailsComponent() {
+export default function BlogDetailsComponent({ blogDetails }) {
   return (
-    <div>
-      <h1>this is blog details components</h1>
+    <div className="p-4 border flex flex-col gap-4  border-red-600">
+      <p>{blogDetails?.title}</p>
+      <p>{blogDetails?.description}</p>
     </div>
   );
 }
