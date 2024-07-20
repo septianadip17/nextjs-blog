@@ -27,7 +27,7 @@ export default function AddBlog() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col p-8">
+    <div className="flex min-h-screen flex-col p-8">
       <h1 className="font-bold text-lg mb-3">Add a New Blog</h1>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-3">
@@ -63,6 +63,6 @@ export default function AddBlog() {
           </button>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

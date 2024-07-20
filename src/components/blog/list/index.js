@@ -12,10 +12,10 @@ export default function BlogListComponent({ getAllBlogs }) {
   }, []);
 
   return (
-    <div>
+    <div className="grid grid-cols-3 gap-4">
       {getAllBlogs && getAllBlogs.length > 0 ? (
         getAllBlogs.map((blogItem) => (
-          <div key={blogItem._id}>
+          <div className="p-4 border border-red-600" key={blogItem._id}>
             <p>{blogItem.title}</p>
             <p>{blogItem.description}</p>
           </div>

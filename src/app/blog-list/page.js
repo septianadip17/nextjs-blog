@@ -17,7 +17,7 @@ export default async function BlogList() {
 
   return (
     <div className="flex min-h-screen flex-col p-8">
-      <h1 className="font-bold text-lg">Blog List</h1>
+      <h1 className="font-bold text-lg mb-5">Blog List</h1>
       <BlogListComponent getAllBlogs={getAllBlogs}/>
     </div>
   );
